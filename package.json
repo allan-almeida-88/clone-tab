@@ -9,7 +9,8 @@
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll", 
+    "test:ci": "jest --ci"
   },
   "author": "",
   "license": "MIT",
