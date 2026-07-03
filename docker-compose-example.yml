@@ -21,8 +21,8 @@ services:
     image: postgres:16.14
     container_name: clone_db
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     ports:
       - 5432:5432
     volumes:
