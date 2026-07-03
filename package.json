@@ -9,13 +9,16 @@
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll", 
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll",
     "test:ci": "jest --ci"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "install": "^0.13.0",
     "next": "^15.5.19",
+    "npm": "^10.9.8",
+    "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
