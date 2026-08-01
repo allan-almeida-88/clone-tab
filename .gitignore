@@ -2,3 +2,5 @@
 node_modules
 docker-compose.yml
 .env
+.env.development
+.env.staging

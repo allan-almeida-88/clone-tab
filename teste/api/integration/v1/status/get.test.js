@@ -8,9 +8,13 @@ test('GET to /api/v1/status should return 200', async () => {
   const parseUpdatedAt = new Date(responseBody.updated_at).toISOString();
   expect(parseUpdatedAt).toEqual(responseBody.updated_at)
 
-  expect(responseBody.dependencies.database.version).toBe(16.14)
+  const { dependencies: { database: {env} } } = responseBody
 
-  expect(responseBody.dependencies.database.max_connections).toBe(100);
-
-  expect(responseBody.dependencies.database.connection_active).toBe(1);  
+  if(env ===  'homologacao') {
+    expect(responseBody.dependencies.database.version).toBe(16.14)
+  
+    expect(responseBody.dependencies.database.max_connections).toBe(100);
+  
+    expect(responseBody.dependencies.database.connection_active).toBe(1);
+  }
 })

@@ -13,14 +13,14 @@ async function status(request, response) {
   })
   const connectionActiveValue   = parseInt(connectionActiveResult.rows[0].connection_active);
   
-  console.log(connectionActiveResult)
   return response.status(200).json({
     updated_at: updatedAt,
     dependencies: {
       database: {
         version: versionDatabaseValue,
         max_connections: maxConnectionValue,
-        connection_active: connectionActiveValue
+        connection_active: connectionActiveValue,
+        env: process.env.NODE_ENV
       }
     }
   })
