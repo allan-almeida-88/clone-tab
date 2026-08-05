@@ -9,6 +9,9 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
     container_name: clone
     ports:
       - 80:3000
