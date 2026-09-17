@@ -4,7 +4,7 @@
   "description": "Estudos",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run wait-for-postgres && npm run migrate:up && next dev",
     "build": "next build",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
@@ -13,7 +13,8 @@
     "test:ci": "jest --ci",
     "migrate:create": "node-pg-migrate -m infra/migrations create",
     "migrate:up": "node-pg-migrate -m infra/migrations --envPath .env up",
-    "migrate:down": "node-pg-migrate -m infra/migrations --envPath .env down"
+    "migrate:down": "node-pg-migrate -m infra/migrations --envPath .env down",
+    "wait-for-postgres": "node infra/scripts/wait-for-postgres.js"
   },
   "author": "",
   "license": "MIT",
