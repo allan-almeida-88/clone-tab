@@ -5,7 +5,8 @@ ARG GID
 
 RUN apt-get update && apt-get install -y \
   net-tools \
-  iputils-ping
+  iputils-ping \
+  docker.io
 
 WORKDIR /var/www/html
 COPY package*.json /var/www/html
@@ -23,4 +24,4 @@ EXPOSE 3000
 
 USER node
 
-CMD [ "npm", "run", "dev"  ]
+# CMD [ "npm", "run", "dev"  ]
